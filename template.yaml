@@ -1,0 +1,23 @@
+mixed-port: 7890
+
+proxies:
+  - name: default-server
+    type: vmess
+    network: ws
+    ws-opts:
+      path: /stream
+    server: 192.168.8.129
+    port: 10086
+    uuid: @uuid
+    alterId: 64
+    cipher: none
+    udp: true
+
+proxy-groups:
+  - name: default-group
+    type: select
+    proxies:
+      - default-server
+
+rules:
+  - MATCH,default-group  

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1280"
+   height="443.07101"
+   viewBox="0 0 338.66664 117.2292"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="Confirm_button_pressed.svgz"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.18582881"
+     inkscape:cx="398.21596"
+     inkscape:cy="559.65487"
+     inkscape:window-width="1463"
+     inkscape:window-height="841"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath10">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.600001;stroke-dasharray:none;stroke-opacity:1"
+         id="rect10"
+         width="32.720337"
+         height="11.326271"
+         x="222.88754"
+         y="68.533897"
+         rx="5.6631355"
+         ry="5.6631355" />
+    </clipPath>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter8"
+       x="-0.039437862"
+       y="-0.1139316"
+       width="1.0788757"
+       height="1.2278632">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.41267506"
+         id="feGaussianBlur8" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#66ccff;fill-opacity:1;stroke:none;stroke-width:6.21015;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6-6-6"
+       width="338.6666"
+       height="117.22914"
+       x="-3.3658505e-06"
+       y="-2.8139038e-06"
+       rx="58.615376"
+       ry="58.614571" />
+    <text
+       xml:space="preserve"
+       style="font-size:65.7241px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.10508;stroke-dasharray:none;stroke-opacity:1"
+       x="47.030109"
+       y="81.816437"
+       id="text6-1-1"><tspan
+         sodipodi:role="line"
+         id="tspan6-0-5"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.10508;stroke-opacity:1"
+         x="47.030109"
+         y="81.816437">Confirm</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.6;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter8)"
+       id="rect6-6-6-5"
+       width="32.720337"
+       height="11.326271"
+       x="222.88754"
+       y="68.533897"
+       rx="5.6631355"
+       ry="5.6631355"
+       clip-path="url(#clipPath10)"
+       transform="matrix(10.35034,0,0,10.350198,-2306.9617,-709.33935)" />
+  </g>
+</svg>

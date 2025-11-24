@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="78.425003mm"
+   height="15.422mm"
+   viewBox="0 0 78.425003 15.422"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="input_selected.svgz"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.973261"
+     inkscape:cx="94.004529"
+     inkscape:cy="100.89932"
+     inkscape:window-width="1463"
+     inkscape:window-height="841"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter6-5-2"
+       x="-0.027095764"
+       y="-0.17696926"
+       width="1.0541915"
+       height="1.3539385">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.7148967"
+         id="feGaussianBlur6-9-9" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.6;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter6-5-2)"
+       id="rect5-8-9"
+       width="74.393623"
+       height="11.390408"
+       x="2.0157521"
+       y="2.0157521"
+       rx="5.6952038"
+       ry="5.6952038" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.600002;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5-6-9-4"
+       width="74.393997"
+       height="11.390408"
+       x="2.0153706"
+       y="2.0157559"
+       rx="5.6952324"
+       ry="5.6952038" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#0084c4;stroke-width:0.600001;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 6.3990536,11.148796 H 71.336333"
+       id="path8" />
+  </g>
+</svg>

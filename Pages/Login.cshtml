@@ -1,0 +1,180 @@
+﻿@page
+@model WebApplication1.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center" style="position: relative">
+    <h1 style="position: absolute; top: 0px; left: 0px; right: 0px;">Login</h1>
+    <h1 id="result_display" style="display: none; position: absolute; top: 10px; background-color: #66FF; color: white; font-size: 22px; left: 0px; right: 0px;"> [!UNDEF!] </h1>
+    <div style="position: absolute; display: inline-block; width: 296px; top: 100px;">
+        <video id="input_background_password_animation" muted autoplay src="resource/input_password_animation.mp4" style="display: none; position: absolute; top: 5rem; left: -148px; width: 296px; height: 58px; pointer-events: none; z-index: -1;"></video>
+        <input id="input_password" type="password" style="position: absolute; text-align: center; border: none; background-color: #0000; width: 296px; height: 58px; top: 5rem; left: -148px">
+        <video id="input_background_username_animation" muted autoplay src="resource/input_user_name_animation.mp4" style="display: none; position: absolute; top: 0rem; left: -148px; width: 296px; height: 58px; pointer-events: none; z-index: -1;"></video>
+        <input id="input_username" type="text" style="position: absolute; text-align: center; border: none; background-color: #0000; width: 296px; height: 58px; top: 0rem; left: -148px">
+    </div>
+    <div style="position: absolute; top: 275px; width: 148px; display: inline-block">
+        <video id="button_background_confirm" muted autoplay src="resource/button_confirm_animation.mp4" style="display: none; position: absolute; right: 0px; top: 0px; width: 123px; height: 42px; z-index: -1;"></video>
+        <input type="button" id="button_confirm" style="background-color: #0000; border: none; position: absolute; right: 0px; top: 0px; width: 123px; height: 42px"/>
+    </div>
+</div>
+
+<script>
+    window.localStorage.clear();
+    var input_password_status = false;
+    var input_username_status = false;
+    var button_confirm_status = false;
+    document.getElementById("input_password").onfocus = () => {
+        if(!input_password_status) input_password_play();
+        input_password_status = true;
+    }
+    document.getElementById("input_password").onblur = () => {
+        if(input_password_status && document.getElementById("input_password").value == "") {
+            input_password_rewind();
+            input_password_status = false;
+        }
+    }
+    document.getElementById("input_username").onfocus = () => {
+        if(!input_username_status) input_username_play();
+        input_username_status = true;
+    }
+    document.getElementById("input_username").onblur = () => {
+        if(input_username_status && document.getElementById("input_username").value == "") {
+            input_username_rewind();
+            input_username_status = false;
+        }
+    }
+    document.getElementById("button_confirm").onclick = () => {
+        if(!button_confirm_status) button_confirm_play();
+        button_confirm_status = false;
+    }
+    function input_password_play() {
+        var t_video = document.getElementById("input_background_password_animation");
+        t_video.play();
+    }
+    function input_password_rewind() {
+        var t_video = document.getElementById("input_background_password_animation");
+        var startSystemTime = new Date().getTime();
+        var startVideoTime = t_video.currentTime;
+        intervalRewind = setInterval(function(){
+            t_video.playbackRate = 1.0;
+            if(t_video.currentTime == 0){
+                clearInterval(intervalRewind);
+                t_video.pause();
+            } else {
+                var elapsed = new Date().getTime()-startSystemTime;
+                t_video.currentTime = Math.max(startVideoTime - elapsed*1/1000.0, 0);
+            }
+        }, 30);
+    }
+    function input_username_play() {
+        var t_video = document.getElementById("input_background_username_animation");
+        t_video.play();
+    }
+    function input_username_rewind() {
+        var t_video = document.getElementById("input_background_username_animation");
+        var startSystemTime = new Date().getTime();
+        var startVideoTime = t_video.currentTime;
+        intervalRewind = setInterval(function(){
+            t_video.playbackRate = 1.0;
+            if(t_video.currentTime == 0){
+                clearInterval(intervalRewind);
+                t_video.pause();
+            } else {
+                var elapsed = new Date().getTime()-startSystemTime;
+                t_video.currentTime = Math.max(startVideoTime - elapsed*1/1000.0, 0);
+            }
+        }, 30);
+    }
+    function display_success(text) {
+        var result_display = document.getElementById("result_display");
+        result_display.innerText = text;
+        result_display.style.height = "0px";
+        result_display.style.fontSize = "0px";
+        result_display.style.display = "block";
+        var i = 0;
+        var animaInterval = setInterval(() => {
+        if(i >= 10) {
+            clearInterval(animaInterval);
+            setTimeout(() => {
+                result_display.style.display = "none";
+            }, 3000);
+        }
+        result_display.style.fontSize = i*2.2 + "px";
+            result_display.style.height = (i++)*3 + "px";
+        }, 30);
+    }
+    function button_trigger() {
+        var username = document.getElementById("input_username").value;
+        var password = document.getElementById("input_password").value;
+        if(username == "" || password == ""){
+            display_success("Please Enter " + (username=="" ? "Username." : "Password."));
+            return;
+        }
+        console.log("Posting to " + window.location)
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.open('POST', window.location + "?handler=json", true);
+        httpRequest.setRequestHeader("Content-type", "application/json");
+        httpRequest.send(JSON.stringify({
+            username: username,
+            password: password
+        }));
+        httpRequest.onreadystatechange = () => {
+            if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var rep = httpRequest.responseText;
+                var res = JSON.parse(rep);
+                console.log(res);
+                if(res.success) {
+                    display_success("Success!");
+                    window.localStorage.setItem("token", res.token);
+                    setTimeout(()=>{
+                        window.location = "/";
+                    }, 4000);
+                }
+                else {
+                    display_success("Login Fail!");
+                }
+            }
+        };
+    }
+    function button_confirm_play() {
+        var t_video = document.getElementById("button_background_confirm");
+        t_video.play();
+        t_video.onended = () => {
+             var startSystemTime = new Date().getTime();
+             var startVideoTime = t_video.currentTime;
+              intervalRewind = setInterval(function(){
+                    t_video.playbackRate = 1.0;
+                    if(t_video.currentTime == 0){
+                        clearInterval(intervalRewind);
+                        t_video.pause();
+                        button_trigger();
+                    } else {
+                        var elapsed = new Date().getTime()-startSystemTime;
+                        t_video.currentTime = Math.max(startVideoTime - elapsed*1/1000.0, 0);
+                    }
+              }, 30);
+        }
+    }
+    var ani_init_once = false;
+    document.getElementById("input_background_password_animation").addEventListener('canplay', () => {
+	    setTimeout(() => ani_init(), 200);
+    });
+    document.getElementById("input_background_password_animation").addEventListener('canplaythrough', () => {
+	    setTimeout(() => ani_init(), 200);
+    });
+    function ani_init() {
+	if(ani_init_once) return;
+	ani_init_once = true;
+	console.log("ani_init");
+    	document.getElementById("input_background_password_animation").style.display = "inline-block";
+    	document.getElementById("input_background_password_animation").pause();
+    	document.getElementById("input_background_password_animation").currentTime = 0;
+    	document.getElementById("input_background_username_animation").style.display = "inline-block";
+    	document.getElementById("input_background_username_animation").pause();
+    	document.getElementById("input_background_username_animation").currentTime = 0;
+    	document.getElementById("button_background_confirm").style.display = "inline-block";
+    	document.getElementById("button_background_confirm").pause();
+    	document.getElementById("button_background_confirm").currentTime = 0;
+    }
+</script>

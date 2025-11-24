@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 id="h1_title"></h1>
+    <div id="main_content" style="display: none; position: relative">
+        <h2>Your Configuration File (yaml)</h2>
+        <pre id="pre_preview" style="text-align: left; border: 1px solid black"></pre>
+    </div>
+    <script>
+        var login_stat = "@Model.login_stat" == "True" ? true : false;
+        var username = "@Model.username";
+        var token_valid = "@Model.token_valid" == "True" ? true : false;
+        var h1_title = document.getElementById("h1_title");
+        var main_content = document.getElementById("main_content");
+        var pre_preview = document.getElementById("pre_preview");
+        if(login_stat)
+        {
+            h1_title.innerText = "Welcome, " + username + "(" + @Model.uid + ").";
+            main_content.style.display = "block";
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', window.location, true);
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.send(JSON.stringify({
+                token: "@Model.token"
+            }));
+            xhr.onload = () => {
+                pre_preview.innerText = xhr.responseText;
+            };
+        }
+        else
+        {
+            if (token_valid) {
+                h1_title.innerHTML = "You need to <a href=\"Login\">Login</a> before you can use it.";
+            }
+            else {
+                var token = localStorage.getItem("token");
+                window.location = window.location + "?handler=config&token=" + token + "&token_valid=true";
+            }
+        }
+    </script>
+</div>
