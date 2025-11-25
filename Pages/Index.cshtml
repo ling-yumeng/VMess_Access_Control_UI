@@ -22,7 +22,7 @@
             h1_title.innerText = "Welcome, " + username + "(" + @Model.uid + ").";
             main_content.style.display = "block";
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', window.location, true);
+            xhr.open('POST', window.location + "&handler=config", true);
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.send(JSON.stringify({
                 token: "@Model.token"
@@ -38,7 +38,7 @@
             }
             else {
                 var token = localStorage.getItem("token");
-                window.location = window.location + "?handler=config&token=" + token + "&token_valid=true";
+                window.location = window.location + "?token=" + token + "&token_valid=true";
             }
         }
     </script>
