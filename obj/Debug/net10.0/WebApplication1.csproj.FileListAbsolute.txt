@@ -410,4 +410,3 @@ C:\Users\Docker\source\repos\WebApplication1\WebApplication1\obj\Debug\net10.0\r
 C:\Users\Docker\source\repos\WebApplication1\WebApplication1\obj\Debug\net10.0\WebApplication1.pdb
 C:\Users\Docker\source\repos\WebApplication1\WebApplication1\obj\Debug\net10.0\WebApplication1.genruntimeconfig.cache
 C:\Users\Docker\source\repos\WebApplication1\WebApplication1\obj\Debug\net10.0\ref\WebApplication1.dll
-C:\Users\Docker\source\repos\WebApplication1\WebApplication1\bin\Debug\net10.0\v2ray\config.json

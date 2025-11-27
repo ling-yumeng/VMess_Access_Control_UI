@@ -68,7 +68,14 @@ namespace WebApplication1.Pages
 		        process.StartInfo.RedirectStandardOutput = false;
 		        process.StartInfo.RedirectStandardError = false;
 		        process.StartInfo.CreateNoWindow = true;
-		        process.Start();
+                try
+                {
+                    process.Start();
+                }
+                catch
+                {
+                    Console.WriteLine("WARNING: Unable to restart v2ray service using systemctl");
+                }
             }
             return Content(config_text);
         }
