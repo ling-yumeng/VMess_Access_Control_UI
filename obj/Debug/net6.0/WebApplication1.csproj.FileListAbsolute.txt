@@ -1,8 +1,0 @@
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.csproj.AssemblyReference.cache
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.AssemblyInfoInputs.cache
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.AssemblyInfo.cs
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.csproj.CoreCompileInputs.cache
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.MvcApplicationPartsAssemblyInfo.cache
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.RazorAssemblyInfo.cache
-/home/ff-c109/source/WebApplication1/obj/Debug/net6.0/WebApplication1.RazorAssemblyInfo.cs

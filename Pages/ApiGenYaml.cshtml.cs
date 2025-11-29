@@ -11,6 +11,10 @@ namespace WebApplication1.Pages
         {
             Classes.Token tk = new Classes.Token("token_db.dat");
             tk.read();
+            if (!tk.valid(token))
+            {
+                return BadRequest();
+            }
             int uid = tk.getUid(token);
             Classes.VmessId vmuidb = new Classes.VmessId("vmessid_db.dat");
             vmuidb.read();
